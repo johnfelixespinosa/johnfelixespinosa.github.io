@@ -9,13 +9,10 @@ is my own personal account of my journey to becoming a full stack developer. I f
 around 2013, but as business grew, and schedules became full, I found myself constantly putting this goal
 on the _backburner_. The end of 2015 rolled around, and I had been building up to this point for two years. My business had become self-sustaining, with a qualified team firmly planted in place, my schedule freed up. 
 
-Not to leave *any* life goals in the _incomplete_ column of my perpetual _must do's_ list. I've since refocused, pulled up my britches, and am diving in headfirst. Included below is a condensed timeline/list of what I have been up to prior to this journey, and a look into my accomplishments thus far.
+Not one to leave **any** life goals in the _incomplete_ column of my perpetual _must do's_ list. I've since refocused, pulled up my britches, made shelf space, and am diving in headfirst. 
 
-#### 2006 - 2010
-The end of 2015 was a turning point for me. My business became self-sustaining, with a team firmly in place
-to handle the day to day, my schedule freed up. 
+### what you will find
 
+I will be featuring posts on this site to include what I'm currently working on, coding, business, travel, and a slew of random posts regarding hobbies and my interests. I will also feature a running review of any and all resources that I use throughout my journey to Full Stack complete with investment and time costs. Treat this as a personal case study and ledger. My goal is to possibly share with others who wish to embark on learning programming a blueprint or a look into anothers journey.
 
-### my history
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](http://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+> -John Espinosa  
