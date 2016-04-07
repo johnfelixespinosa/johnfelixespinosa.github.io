@@ -1,15 +1,18 @@
 ---
 layout: page
 title: About me
-subtitle: Unique subtitle goes here
+subtitle: Step into my world
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+My name is John Espinosa. I'm a small business owner currently residing in Virginia Beach, Virginia. This blog
+is my own personal account of my journey to becoming a full stack developer. I first embarked on this journey 
+around 2014, but as business grew, and schedules became full, I found myself constantly putting this goal
+on the _backburner_.  
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+####End of 2015
+The end of 2015 was a turning point for me. My business became self-sustaining, with a team firmly in place
+to handle the day to day, my schedule freed up. 
 
-What else do you need?
 
 ### my history
 
