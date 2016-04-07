@@ -13,6 +13,14 @@ Not one to leave **any** life goals in the _incomplete_ column of my perpetual _
 
 ### what you will find
 
-I will be featuring posts on this site to include what I'm currently working on, coding, business, travel, and a slew of random posts regarding hobbies and my interests. I will also feature a running review of any and all resources that I use throughout my journey to Full Stack complete with investment and time costs. Treat this as a personal case study and ledger. My goal is to possibly share with others who wish to embark on learning programming a blueprint or a look into anothers journey.
+I will be featuring posts on this site to include 
 
-> -John Espinosa  
+* what I'm currently working on
+* coding
+* business
+* travel
+* personal interests. 
+
+I will also feature a running review of any and all resources that I use throughout my journey to Full Stack complete with investment and time costs. Treat this as a personal case study and ledger. My goal is to possibly share with others who wish to embark on learning programming a blueprint or a look into anothers journey.
+
+#####_-John Espinosa_  
