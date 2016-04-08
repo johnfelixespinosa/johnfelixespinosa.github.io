@@ -15,7 +15,7 @@ Up until this point majority of my coding experience has been completing quick t
 
 I found One Month to be a fairly solid course, while the course is a outdated (I believe it was launched 2013), they have a solid support team that updates the material when needed. It's fast paced, doesn't really explain much of the actual code, majority of it is available on the screen for you to simply paste into your editor. I found myself pausing the video several times and simply copying code. They go into bootstrap, encourage you to experiment with your own customisation, and upon compeletion, you should have a fairly working Pinterest clone. 
 
-![Pinteresting app](https://github.com/johnfelixespinosa/johnfelixespinosa.github.io/blob/master/img/OneMonthSS.png)
+![Pinteresting app](johnfelixespinosa.github.io/img/OneMonthSS.png)
 
 ### Learn-Rails.com
 
