@@ -23,4 +23,4 @@ I will be featuring posts on this site to include
 
 I will also feature a running review of any and all resources that I use throughout my journey to Full Stack complete with investment and time costs. Treat this as a personal case study and ledger. My goal is to possibly share with others who wish to embark on learning programming a blueprint or a look into anothers journey.
 
-#### _John Espinosa_  
+#### _-John Espinosa_  
