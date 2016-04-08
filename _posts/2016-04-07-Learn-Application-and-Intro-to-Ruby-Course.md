@@ -19,15 +19,15 @@ Learn.co is the online arm of New Yorks [Flatiron School](http://flatironschool.
 
 ### Application Process
 
-Upon signing up for an account, Learn gives you full access to their free Intro to Ruby Web Dev course. By linking you github and setting up your environment to run with their Learn App, you are ready to go. Naturally as you progress through the course you will be given the ability to start and application with them. 
+Upon signing up for an account, Learn gives you full access to their free Intro to Ruby Web Dev course. By linking your github and setting up your environment to run with their Learn App, you are ready to go. Naturally as you progress through the course you will be given the ability to start an application with them. 
 
-+ **Part 1**
++ **Part 1**  
 A short 200 word essay simply explaining your reasons for wanting to get into code, possibly a short bio
 
-+ **Part 2**
++ **Part 2**  
 A very quick, 30 second video introducing yourself and talking about your experiences so far with learning to code
 
-+ **Part 3**
++ **Part 3**  
 20 minute interview with a Learn team member, very informal, no coding questions, just elaborating on your goals, and I guess for them to see if you would be a good fit for their program
 
 I completed the 20 minute interview earlier today with Annette, a very nice young lady who was head of admissions for Learn and I believe Flatiron as well. We talked more about the program, she asked a few questions about myself and why this is something I want to pursue, and ofcourse we talked about cost and time commitment for students. I expressed my desire to continue with this course as I very much enjoyed the free course, and this platform for learning. I think it went well. In two days time I'll learn whether or not they'll have me. Until then I'll crack into the Ruby books I've purchased and continue with finding Ruby coursework to tackle.
