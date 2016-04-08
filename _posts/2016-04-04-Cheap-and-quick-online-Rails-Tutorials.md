@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Cheap and quick Online Rails Tutorials"
-date:  2016-04-07 22:05:10
+date:  2016-04-04 22:05:10
 categories: code
 ---
 
@@ -37,5 +37,6 @@ Kehoe's tutorial packs a lot of info, and skims the surface of a lot of topics f
 ### Final Words
 
 Do not go into these style tutorials thinking you will be any sort of programmer upon completion, you wont be. Instead use them for what they are intended for, to get the ball rolling and a trial by fire into the world of coding.
+
 
 #### _-John Espinosa_  
