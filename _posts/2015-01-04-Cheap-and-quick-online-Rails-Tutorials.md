@@ -23,7 +23,7 @@ I found One Month to be a fairly solid course, while the course is a outdated (I
 + **medium:** Online text 
 + **time:** 3 days
 
-I found Daniel Kehoe's tutorial through reddit. He was doing some sort of special offer, and for less than a dollar, I signed up. The tutorial is broken down into two books. The first book doesn't have any coding, rather, goes into explaining what is Rails, how to be successful in learning how to code, as well as a quick overview of other languages. This book can be read in a sitting or two. The second book follows the building of your first ever rails app. Many of its chapters go in depth or just pierce the surface of its topic to include
+I found Daniel Kehoe's tutorial through reddit. He was doing some sort of special offer, and for less than a dollar, I signed up. The tutorial is broken down into two books. The first book doesn't have any coding, rather, goes into explaining what is Rails, how to be successful in learning how to code, as well as a quick overview of other languages. This book can be read in a sitting or two. The second book follows the building of your first ever rails app. Many of its chapters are great topics, however just pierce the surface to include
 
 + Git
 + Front-End Frameworks
