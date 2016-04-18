@@ -17,7 +17,7 @@ Today marked exactly one week since I signed up for [Learn.co's](http://www.lear
 
 ### CSS
 
-CSS, being something I've never really touched before, was a great learning experience. I know that if I keep experimenting with it that I can really ge the basics down. Now, I know it can get **alot** more complicated and in depth, and there are a lot of things I still don't know you can do with CSS, but understanding the basics for now should be more than enough to be able to begin putting decent looking projects together. I'm really glad we got an introduction into media queries and responsiveness, it really helped me see the magic behind Web 2.0 sites and their ability to simply look good on all platforms. It's not all a mystery to me now. 
+CSS, being something I've never really touched before, was a great learning experience. I know that if I keep experimenting with it that I can really get the basics down. Now, I know it can get **alot** more complicated and in depth, and there are a lot of things I still don't know you can do with CSS, but understanding the basics for now should be more than enough to be able to begin putting decent looking projects together. I'm really glad we got an introduction into media queries and responsiveness, it really helped me see the magic behind Web 2.0 sites and their ability to simply look good on all platforms. It's not all a mystery to me now. 
 
 ### Bootstrap
 
