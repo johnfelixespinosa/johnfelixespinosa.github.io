@@ -13,12 +13,12 @@ Well that's it! After weeks of on and off again work, I've finished my scraping 
 
 + **CSS** is daunting at first. Using tags and selectors, finding the data your after, navigating and inspecting page source code and piecing it all together is not easy at first. I'm sure with more experience and learning more tools and shortcuts will make it manageable.  
 + **Nokogiri** is pretty cool, and I want to immediately build another scraper because of it.
-+ **Pry** is even cooler! I started using it a lot more while building this scraper, and man, it really helped me understand what my methods were doing, and how my objects were being behaving. 
++ **Pry** is even cooler! I started using it a lot more while building this scraper, and man, it really helped me understand what my methods were doing, and how my objects were misbehaving, lol. 
 
 ### Learn Blog CLI Scraper
 
-So what exactly does this project do, You may ask. 
-The CLI scrapes the [Learn.co Blog](http://blog.flatironschool.com) and generates data from each post. The user first chooses a category for which they would like to see all the current posts, from that selection, all the current posts in that category are pulled up for the user to see. Lastly the user can choose a post they would like more info about, this generates the data for that post in the following format
+So what exactly does this project do, you may ask. 
+The application scrapes the [Learn.co Blog](http://blog.flatironschool.com) and generates data from each post. The user first chooses a category for which they would like to see all the current posts, from that selection, all the current posts in that category are pulled up for the user to see. Lastly the user can choose a post they would like more info about, this generates the data for that post in the following format
 
 - post title
 - post author
@@ -31,7 +31,7 @@ I chose to scrape the blog initially because, while inspecting the page, the sel
 
 #### Scraper Class
 
-The scraper class's job was to use the gems open-uri and nokogiri to access the correct url for the specific blog post category the user inputed. Once accessing the correct url, it would enumerate through that pages css finding the individual posts creating new post class objects. Rinse and repeat for everytime the user decides to call upon a new blog post category. 
+The scraper class job was to use the gems open-uri and nokogiri to access the correct url for the specific blog post category the user inputed. Once accessing the correct url, it would enumerate through that pages css finding the individual posts, thus creating new post class objects. Rinse and repeat for everytime the user decides to call upon a new blog post category. 
 
 #### Post Class
 
@@ -45,7 +45,7 @@ Once I was able to wrap my head around what I wanted each class to do, building 
 
 ### Future refactoring 
 
-I'll go through the entire application and can refactor a lot of my redundant code such as my print_category method in the CLI class along with the make_posts method within the scraper class. I know I can find a more elegant way to do what those methods intend to do rather than repetitive else/if statements. I also plan to re-examine my gets user input sections within the CLI, as I don't believe my begin/rescue features are working properly. 
+I can go through the entire application and can refactor a lot of my redundant code such as my print_category method in the CLI class along with the make_posts method within the scraper class. I know I can find a more elegant way to do what those methods intend to do rather than repetitive else/if statements. I also plan to re-examine my gets user input sections within the CLI, as I don't believe my begin/rescue features are working properly. 
 
 As it is currently, the class variable @all within the post class stores the posts for only one category at a time. If the user decides they would like to see the posts of a different category, then the @all variable is cleared using the clear class method. This works, but what if I wanted to add later on find by name or a search by author feature? The app wouldn't be able to do so as it only stores the info for one category at a time. What if an author has a post in two separate categories? The application wouldn't be able to do that function. I'm still mulling over how I would store the posts objects, I'm sure the solution is simple and I'm just over complicating it mentally. 
 
