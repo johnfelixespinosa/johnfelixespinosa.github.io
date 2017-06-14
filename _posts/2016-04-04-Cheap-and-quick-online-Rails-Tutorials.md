@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: "Cheap and quick Online Rails Tutorials"
 date:  2016-04-04 22:05:10
 categories: code
