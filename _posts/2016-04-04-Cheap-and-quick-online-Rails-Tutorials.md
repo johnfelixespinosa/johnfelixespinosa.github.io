@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Cheap and quick Online Rails Tutorials"
+title: "Cheap and Quick Online Rails Tutorials"
 date:  2016-04-04 22:05:10
 categories: code
 ---
