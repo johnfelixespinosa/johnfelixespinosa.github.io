@@ -11,7 +11,7 @@ Well that's it! After weeks of on and off again work, I've finished my scraping 
 
 ### Takeaways
 
-+ **CSS** is daunting at first. Using tags and selectors, finding the data your after, navigating and inspecting page source code and piecing it all together is not easy at first. I'm sure with more experience and learning more tools and shortcuts will make it manageable.  
++ **CSS** is daunting at first. Using tags and selectors, finding the data you're after, navigating and inspecting page source code and piecing it all together is not easy at first. I'm sure with more experience and learning more tools and shortcuts will make it manageable.  
 + **Nokogiri** is pretty cool, and I want to immediately build another scraper because of it.
 + **Pry** is even cooler! I started using it a lot more while building this scraper, and man, it really helped me understand what my methods were doing, and how my objects were misbehaving, lol. 
 
