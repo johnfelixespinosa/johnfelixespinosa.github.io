@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Scraping the Web, One Site at a Time"
-date:  2017-05-14 02:44:35
+date:  2017-06-14 02:44:35
 categories: code
 ---
 
