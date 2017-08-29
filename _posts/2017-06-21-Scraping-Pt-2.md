@@ -7,7 +7,7 @@ categories: code
 
 ![Scraper Assessment](/img/CodeReviewSS.png)
 
-The scraping project from my previous post ended up being a success, in addition, I got to experience my first code review with one of the team members from Learn. Prior to the review I was hesistant, half expecting the reviewer to rip my code to shreds, but in actuality it was a wonderful experience. Cernan, my reviewer, gave me pointers such as which methods should be handled by which classes. For example, the following class method **new_from_index_page(p)**, I had within my Posts class. However, it shouldn't be the Post class's job to deal with any CSS or tags. It made much more sense to move this method to the Scraper class, and so that's what I ended up coding during the review with Cernan. 
+The scraping project from my previous post ended up being a success, in addition, I got to experience my first code review with one of the team members from Learn. Prior to the review I was hesistant, half expecting the reviewer to rip my code to shreds, but in actuality it was a wonderful experience. Sernan, my reviewer, gave me pointers such as which methods should be handled by which classes. For example, the following class method **new_from_index_page(p)**, I had within my Posts class. However, it shouldn't be the Post class's job to deal with any CSS or tags. It made much more sense to move this method to the Scraper class, and so that's what I ended up coding during the review with Cernan. 
 
 ```ruby
 class LearnBlogCLI::Posts
