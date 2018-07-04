@@ -41,17 +41,43 @@ user.role # => "student" # find out the user’s role
 user.role = 'foo' # ArgumentError: 'foo' is not a valid, we can’t set invalid roles
 ```
 
-Woah this was pretty cool! My application was simple enough that using the Enum feature (**Note:** *added to Rails 4.1*) made sense. I simply just wanted to distinguish whether a user was a student or an instructor. After implementing Enum into the app. Things were starting to come together. Until I got to the whole ace of enrolling and withdrawing from courses. Which if you think about it was the **MAIN** purpose of my app. Who needs an app that just allows instructors to add courses??!? Who cares? If a student can't even enroll!!? 
+Woah this was pretty cool! My application was simple enough that using the Enum feature (**Note:** *added to Rails 4.1*) made sense. I simply just wanted to distinguish whether a user was a student or an instructor. After implementing Enum into the app. (**Note:** *in the end I still ended up having to run a new migration*) Things were starting to come together. Until I got to the whole act of enrolling and withdrawing from courses. Which if you think about it was the **MAIN** purpose of my app. Who needs an app that just allows instructors to add courses??!? Who cares? If a student can't even enroll!!? 
 
-Level of satisfaction = 1 
-Level of frustration = 10
+Sense of Accomplishment = **1** 
+Level of frustration = **10**
 
-### Scraper Project #2
+### enrollment.rb
 
-After completing my student scraping project and passing my code review and assessment I decided to build out yet another scraper project, not only for the practice, but to challenge myself. I settled on the idea of building a CLI that scrapes the top must have vinyl records for anyones collection. 
+My initial approach to this feature was, "Oh! I know, letme just create a new attribute for student users that gets instances of courses for when they enroll!". That'll work right? After working on implementing that for a while, I realized this is a bunch of redundant code, there has got to be a way for me to simply associate a course to a students user_id. That would be much more efficient. That lead me to creating a new model of the concept of Enrollment. When a student decides to enroll, a new Enrollment object is created storing the course_id and user_id. Linking the two. An enrollment has_one user and has_one course! What a revalation. 
 
-![Top Vinyls](/img/TopVinylsSS.png)
+```ruby
+  get '/courses/:id/enroll' do 
+    if logged_in?
+      if is_a_student?
+          current_course
+          @enroll = Enrollment.new(
+            :user_id => session[:user_id],
+            :course_id => current_course.id
+            )
+         @enroll.save
+         redirect to ("/users/#{current_user.slug}")
+      end
+    end
+  end
+```
+```ruby
+class Enrollment < ActiveRecord::Base
+  has_one :user
+  has_one :course
 
-I want this scraper to provide more data to the user, and it gets a bit more complicated, as it will require me to scrape from multiple pages. It's a work in progress, but so far moving along nicely. I should have it complete by the end of the week. Ultimately, I'd like to be able to provide the user with an album track listing, and possibly info on pressings and release dates. 
+end
+```
+
+How simple! In the end it still took me a while to write the methods that allowed me to pull out the proper data for courses using the Enrollment objects. But we powered through and the app works as intended. 
+
+Sense of Accomplishment = **100** 
+Level of frustration = **mild** 
+
+You can checkout the completed application at [IOCC - Imagine Online Community College](https://github.com/johnfelixespinosa/sinatra_portfolio_project)
 
 #### _-John Espinosa_  
