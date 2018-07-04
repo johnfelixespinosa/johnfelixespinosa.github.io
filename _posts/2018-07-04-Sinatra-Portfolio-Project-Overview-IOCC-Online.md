@@ -48,7 +48,7 @@ Level of frustration = **10**
 
 ### enrollment.rb
 
-My initial approach to this feature was, "Oh! I know, letme just create a new attribute for student users that gets instances of courses for when they enroll!". That'll work right? After working on implementing that for a while, I realized this is a bunch of redundant code, there has got to be a way for me to simply associate a course to a students user_id. That would be much more efficient. That lead me to creating a new model of the concept of Enrollment. When a student decides to enroll, a new Enrollment object is created storing the course_id and user_id. Linking the two. An enrollment has_one user and has_one course! What a revalation. 
+My initial approach to this feature was, "Oh! I know, letme just create a new attribute for student users that gets instances of courses for when they enroll!". That'll work right? After working on implementing that for a while, I realized this is a bunch of redundant code, there has got to be a way for me to simply associate a course to a students user_id. That would be much more efficient. That lead me to creating a new model of the concept of Enrollment. When a student decides to enroll, a new Enrollment object is created storing the course_id and user_id. Linking the two. An enrollment has_one user and has_one course! What a revelation. 
 
 ```ruby
   get '/courses/:id/enroll' do 
@@ -78,6 +78,6 @@ How simple! In the end it still took me a while to write the methods that allowe
 Sense of Accomplishment = **100** 
 Level of frustration = **mild** 
 
-You can checkout the completed application at [IOCC - Imagine Online Community College](https://github.com/johnfelixespinosa/sinatra_portfolio_project)
+You can checkout the completed app at [IOCC - Imagine Online Community College](https://github.com/johnfelixespinosa/sinatra_portfolio_project)
 
 #### _-John Espinosa_  
