@@ -10,6 +10,7 @@ meta_description: "personal blog site on learning how to code"
 navbar-links:
   About Me: "aboutme"
   Author's home: "http://johnfelixespinosa.github.io"
+  Resume: "/JohnEspinosaResume2019.pdf"
 
 avatar: "/img/avatar.jpg"
 
