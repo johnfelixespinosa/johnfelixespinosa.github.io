@@ -51,7 +51,7 @@ function interiorFence(){
 console.log(tree); // Oak
 ```
 
-As you can see, if we step into our interior fence and ask the console to log the tree, it will return Oak, remember when I said that everything within our first fence is global? Think of it like this. Inside our interior fence, we have no tree, and we ask, "Hey console? what tree do we have?". Console will first look locally in our interior fence and see no tree, then he steps out of the interior fence and back into our global yard and points and says "Over there! it's an Oak! Did I do good? Please tell me I did good". Ok you did good console. 
+As you can see, if we step into our interior fence and ask the console to log the tree, it will return Oak, remember when I said that everything within our first fence is global? Think of it like this. Inside our interior fence, we have no tree, and we ask, "Hey console? what tree do we have?". Console will first look locally in our interior fence and see no tree, then he steps out of the interior fence and back into our global yard and points and says "Over there! it's an Oak! Did I do good? Please tell me I did good". Ok you did good console. Put the Maple tree back within the interior fence and ask console again. He'll look locally and point to the Maple tree immediately. 
 
 
 
