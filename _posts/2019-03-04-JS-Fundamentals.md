@@ -108,10 +108,28 @@ var tree = "Oak"
 
 if (tree = "Oak"){
     var treeHeight = "tall"
-    console.log(tree + " is " + treeHeight)
+    console.log(tree + " tree is " + treeHeight)
 }
+//Oak tree is tall
+treeHeight
+//tall
 ```
 
+Here, console logs the Oak tree is tall, and even when asked treeHeight, he returns the value of it. Here we are declaring treeHeight within the block scope, its not within an enclosed fence, so it's still available since it is a var. That is the difference between var, let, and const. While var is visible within our block/string fence, let and const are block scoped, or string fenced scoped. Meaning if we did as follows...
+
+```javascript
+let tree = "Oak"
+
+if (tree = "Oak"){
+    let treeHeight = "tall"
+    console.log(tree + " tree is " + treeHeight)
+}
+//Oak tree is tall
+treeHeight
+//Uncaught ReferenceError: treeHeight is not defined
+```
+
+Here, console logs that the Oak tree is tall. However, once we step outside of the block scope, the string fence, the if statement, console no longer knows about treeHeight. Let and const are block scoped, once outside the string fence, they no longer exist. 
 
 
 
