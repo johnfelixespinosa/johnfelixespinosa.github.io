@@ -116,7 +116,7 @@ console.log("If the sun is not shining, the tree is " + treeStatus )
 //If the sun is not shining, the tree is growing
 ```
 
-Here, console logs the tree is growing both times, but didn't we say, outside of the block scope that if the sun is not shining the tree is dying? This happends because console did not really create a new var for treeStatus outside of the string fence, the block, it is actually just reassigning the treeStatus, that's why it is growing both times. That's the power of let and const, we can do this...
+Here, console logs the tree is growing both times, but didn't we say, outside of the block scope that if the sun is not shining the tree is dying? This happends because console did not really create a new var for treeStatus outside of the string fence, the block, it is actually just reassigning the treeStatus, that's why it is growing both times. With let and const, we can do this...
 
 ```javascript
 var sunShining = true;
@@ -188,7 +188,7 @@ tree.waterAgain = function () {
 tree.waterAgain()
 //Oak tree is being watered AGAIN!
 ```
-Introducing the Arrow Function, notice how in our water again function, we used ${this.type} again, and correctly console identified the tree we are watering again. This is because arrow functions adopt the context for this from the scope they are defined in. Our function is defined within the scope of the tree object, therefore is references the tree, which in fact has a type variable declaration, Oak. 
+Introducing the Arrow Function, notice how in our water again function, we used ${this.type} again, and correctly console identified the tree we are watering again. This is because arrow functions adopt the context for this from the scope they are defined in. Our function is defined within the scope of the tree object, therefore it references the tree, which in fact has a type variable declaration, Oak. 
 
 ## Closures
 
@@ -212,7 +212,7 @@ showTreeAge(tree.type, tree.age)
 //The following tree is Oak and is 5 years old
 ```
 
-Here we defined the showAnswer function within the showTreeAge function, and because of this the showAnswer can access the statement variable defined within showTreeAge allowing it to form the correct answer using all the variables. So why are closures helpful? Closures, because of how they have access scope variables, take a look at the following example. 
+Here we defined the showAnswer function within the showTreeAge function, and because of this the showAnswer can access the statement variable defined within showTreeAge allowing it to form the correct answer using all the variables. So why are closures helpful? Lets take a look at the following example. 
 
 ```javascript
 
@@ -242,7 +242,7 @@ plantTree()
 // 1
 ```
 
-Oops, that doesn't work, our counter is reset to 0 everytime we plant a tree. Now lets use finally use a closure.
+Oops, that doesn't work, our counter is reset to 0 everytime we plant a tree. Now lets use finally a closure.
 
 ```javascript
 let plantTree = (function(){
