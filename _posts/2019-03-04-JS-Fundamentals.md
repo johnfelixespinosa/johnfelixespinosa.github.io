@@ -101,35 +101,168 @@ tree;
 // Uncaught ReferenceError: tree is not defined
 ```
 
-Tree is defined within the function, therefore, it is not available or seen outside the function, because var is locally scoped to the function, and if not declared within a function then it is globally scoped within our global fence. So if we did the following... 
+Tree is defined within the function, therefore, it is not available or seen outside the function, because var is locally scoped to the function, and if not declared within a function then it is globally scoped within our global fence. However, if we did the following... 
 
 ```javascript
-var tree = "Oak"
+var sunShining = true;
+var treeStatus = "not growing";
 
-if (tree = "Oak"){
-    var treeHeight = "tall"
-    console.log(tree + " tree is " + treeHeight)
+if (sunShining){
+    var treeStatus = "growing"
+    console.log("If the sun is shining, the tree is " + treeStatus )
 }
-//Oak tree is tall
-treeHeight
-//tall
+console.log("If the sun is not shining, the tree is " + treeStatus )
+//If the sun is shining, the tree is growing
+//If the sun is not shining, the tree is growing
 ```
 
-Here, console logs the Oak tree is tall, and even when asked treeHeight, he returns the value of it. Here we are declaring treeHeight within the block scope, its not within an enclosed fence, so it's still available since it is a var. That is the difference between var, let, and const. While var is visible within our block/string fence, let and const are block scoped, or string fenced scoped. Meaning if we did as follows...
+Here, console logs the tree is growing both times, but didn't we say, outside of the block scope that if the sun is not shining the tree is dying? This happends because console did not really create a new var for treeStatus outside of the string fence, the block, it is actually just reassigning the treeStatus, that's why it is growing both times. That's the power of let and const, we can do this...
 
 ```javascript
-let tree = "Oak"
+var sunShining = true;
+let treeStatus = "not growing";
 
-if (tree = "Oak"){
-    let treeHeight = "tall"
-    console.log(tree + " tree is " + treeHeight)
+if (sunShining){
+    let treeStatus = "growing"
+    console.log("If the sun is shining, the tree is " + treeStatus )
 }
-//Oak tree is tall
-treeHeight
-//Uncaught ReferenceError: treeHeight is not defined
+console.log("If the sun is not shining, the tree is " + treeStatus )
+//If the sun is shining, the tree is growing
+//If the sun is not shining, the tree is not growing
 ```
 
-Here, console logs that the Oak tree is tall. However, once we step outside of the block scope, the string fence, the if statement, console no longer knows about treeHeight. Let and const are block scoped, once outside the string fence, they no longer exist. 
+Here, console logs that the tree is growing if the sun is shining, and logs that the tree is not growing if the sun is not shining. This is because let and const are block scoped, meaning they recognize that even though it is within a block, it is a new scope, a new fence.
+
+## Context and this
+
+Let us create a tree and give it the ability to be watered
+
+```javascript
+let tree = {
+    type: "Oak",
+    water: function () {
+        console.log(`${this.type} tree is being watered`)
+    }
+}
+tree.water()
+// Oak tree is being watered
+```
+
+When we call the water function on the tree, the this is referring to the tree object in which it is being called. That is why we are seeing the tree type being logged. Let's try watering the tree some more and see what happens.
+
+```javascript
+let tree = {
+    type: "Oak",
+    water: function () {
+        console.log(`${this.type} tree is being watered`)
+    }
+}
+tree.water()
+// Oak tree is being watered
+
+let waterAgain = tree.water
+//lets reuse the initial water function and create another function
+
+waterAgain()
+//undefined tree is being watered
+```
+
+Wait! how come our tree is undefined? This is because when we copied over the function to create a new function, the this no longer has the context of the tree that we defined. Therefore we are asking it this.type and it doesn't have a type as it isnt associated to anything that has a type. It will actually be referencing the global object window from the browser, and that doesn't have a type defined. So how can we create a new method of waterAgain for our tree referencing this?
+
+```javascript
+let tree = {
+    type: "Oak",
+    water: function () {
+        console.log(`${this.type} tree is being watered`)
+    }
+}
+tree.water()
+// Oak tree is being watered
+
+tree.waterAgain = function () {
+    let waterAgainFunction = () => {
+        console.log(`${this.type} tree is being watered AGAIN!`)
+    }
+    waterAgainFunction()
+}
+tree.waterAgain()
+//Oak tree is being watered AGAIN!
+```
+Introducing the Arrow Function, notice how in our water again function, we used ${this.type} again, and correctly console identified the tree we are watering again. This is because arrow functions adopt the context for this from the scope they are defined in. Our function is defined within the scope of the tree object, therefore is references the tree, which in fact has a type variable declaration, Oak. 
+
+## Closures
+
+A closure is simply a function that has access to its outer functions variables, therefore, it has access to three possible scope variables, its own scopes variables, its outer functions scope variables, and ofcourse global variables. You can create a closure by creating a function within a function. Like so 
+
+```javascript
+let tree = {
+  type: "Oak",
+  age: "5 years"
+}
+
+function showTreeAge (type, age) {
+  let statement = "The following tree is ";
+    
+  function showAnswer () {        
+    console.log(statement + type + " and is " + age + " old")
+  }
+  showAnswer()
+}
+showTreeAge(tree.type, tree.age)
+//The following tree is Oak and is 5 years old
+```
+
+Here we defined the showAnswer function within the showTreeAge function, and because of this the showAnswer can access the statement variable defined within showTreeAge allowing it to form the correct answer using all the variables. So why are closures helpful? Closures, because of how they have access scope variables, take a look at the following example. 
+
+```javascript
+
+let treeCount = 0
+
+function plantTree(){
+  ++treeCount
+  console.log(treeCount)
+}
+plantTree()
+// 1
+plantTree()
+// 2
+```
+
+This is fine, right? Well no, the only time we want the treeCount to increment is when we plant a tree, what if another function is defined and inadvertently adjusts our tree count? Well what if we put the counter within the function like so.
+
+```javascript
+function plantTree() {
+  let treeCount = 0
+  ++treeCount
+  console.log(treeCount)
+}
+plantTree()
+// 1
+plantTree()
+// 1
+```
+
+Oops, that doesn't work, our counter is reset to 0 everytime we plant a tree. Now lets use finally use a closure.
+
+```javascript
+let plantTree = (function(){
+  let treeCount = 0;
+
+  return function(){
+    ++treeCount;
+    console.log(treeCount)
+  }
+})()
+plantTree()
+//1
+plantTree()
+//2
+plantTree()
+//3
+```
+
+Finally, here we can increment our tree count by calling the function to plant tree. Our tree count is protected within the function, as our incrementation happens within the plant tree function. Perfect.
+
 
 
 
