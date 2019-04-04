@@ -5,7 +5,7 @@ date:  2019-03-04 15:30:35
 categories: code
 ---
 
-## Scopes
+### Scopes
 
 I was recently asked to explain the types of scope within Javascript, and admittedly while I was familiar with the concepts, regurgitating their nuances was problematic. So, much like many other instances in my life where I've tried to really understand a concept, I came up with a metaphor that I could easily fall back to when asked this question again. 
 
@@ -89,7 +89,7 @@ innerFence();
 // Oak tree exits!
 ```
 
-## Let and Const
+### Let and Const
 
 There is another form of scope, and that is block scope. Think of a block as posts with a string tied around them within an inner fence. Not quite a full fence but a boundary. So lets imagine the following.
 
@@ -133,7 +133,7 @@ console.log("If the sun is not shining, the tree is " + treeStatus )
 
 Here, console logs that the tree is growing if the sun is shining, and logs that the tree is not growing if the sun is not shining. This is because let and const are block scoped, meaning they recognize that even though it is within a block, it is a new scope, a new fence.
 
-## Context and this
+### Context and this
 
 Let us create a tree and give it the ability to be watered
 
@@ -190,7 +190,7 @@ tree.waterAgain()
 ```
 Introducing the Arrow Function, notice how in our water again function, we used ${this.type} again, and correctly console identified the tree we are watering again. This is because arrow functions adopt the context for this from the scope they are defined in. Our function is defined within the scope of the tree object, therefore it references the tree, which in fact has a type variable declaration, Oak. 
 
-## Closures
+#### Closures
 
 A closure is simply a function that has access to its outer functions variables, therefore, it has access to three possible scope variables, its own scopes variables, its outer functions scope variables, and ofcourse global variables. You can create a closure by creating a function within a function. Like so 
 
