@@ -9,7 +9,7 @@ In order to get a better understanding of React components, how to build and str
 ## [Instagram Post](https://github.com/johnfelixespinosa/React-Practice/tree/master/instagram-mock)
 <img style="float: right;" src="/img/ig-mock.png">
 
-## [Motivational Poster](https://github.com/johnfelixespinosa/React-Practice/tree/master/poster-mock
+## [Motivational Poster](https://github.com/johnfelixespinosa/React-Practice/tree/master/poster-mock)
 <img style="float: right;" src="/img/poster-mock.png">
 
 ## [Credit Card](https://github.com/johnfelixespinosa/React-Practice/tree/master/credit-card)
