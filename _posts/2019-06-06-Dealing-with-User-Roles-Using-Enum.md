@@ -118,7 +118,7 @@ enum role: {
 }
 ```
 
-This defensively sets up our code base be able to accept any future roles that may be added. 
+This defensively sets up our code base to be able to accept any future roles that may be added. 
 
 In conclusion, using enums can be a really useful way for defining roles within an application. It definitely worked for me in this application. By explicitly setting our values, we can guarantee data integrity, while keeping readability, whilst also having built-in validations. 
 
