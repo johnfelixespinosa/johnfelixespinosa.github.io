@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Dealing with User Roles"
+title: "Dealing with User Roles Using Enum"
 date:  2019-06-06 15:13:35
 categories: code
 ---
 
-One of the most common features to be implemented in a web application is the ability to specify roles. Much like the last time I implemented a roles feature [(here)](https://github.com/johnfelixespinosa/React-Practice/tree/master/instagram-mock), it took me longer than it should have. Going in one direction, only to switch gears to another, ultimately coming full circle back in the original direction. To review the concept, I'd like to identify the pros and cons of the implementation method I chose, as well as the pros and cons of alternate methods. 
+One of the most common features to be implemented in a web application is the ability to specify roles. Much like the last time I implemented a roles feature [(here)](https://github.com/johnfelixespinosa/React-Practice/tree/master/instagram-mock), it took me longer than it should have. Going in one direction, only to switch gears to another, ultimately coming full circle back in the original direction. To review the concept, I'd like to identify the pros and cons of the implementation method I chose.
 
 The task at hand for this implementation was as follows 
 
@@ -86,6 +86,41 @@ attendance.group ##The attendance object's user
 attendance.role ##The role assigned to this attendance object
 "Organizer"
 ```
+
+In order to query a group object for specific roles, a finder method could be used such as
+
+```ruby
+group.attendances.where(role: "Organizer") ##All attendances with Organizer role
+<Attendance id: 12, user_id: 3, group_id: 4, role: "Organizer">]
+```
+The immediate advantage to using this technique is it's simplicity especially for smaller applications. Essentially the technique is equivalent to just adding an attribute column to a table, with the added benefit of avoiding possible errors such as *role = "Orgnzer"*. Enum simply maps values to integers within the database, but still allow querying by name. Another advantage to using enums is the built-in validation we get when assigning a role, for example 
+
+```ruby
+class Attendance < ApplicationRecord
+  belongs_to :user
+  belongs_to :group
+
+  enum role: [:Participant, :Presenter, :Organizer ]
+end
+
+attendance = Attendance.create(user_id: user.id, group_id: group.id, role: "Manager")
+
+=> ArgumentError: 'Manager' is not a valid role
+```
+
+The biggest disadvantage to using enum is that the integer values are not explicity set. If in the future a new role was to be added, and for whatever reason it was added inbetween to previously set values, such as Manager inbetween Presenter and Organizer, then the enum integer values would remap and the values within the database will no longer be correct. All prior Organizers will now be Managers. We can definitely avoid this however by explicitly setting the values, for example
+
+```ruby
+enum role: {
+  Participant: 0,
+  Presenter: 1,
+  Organizer: 2
+}
+```
+
+This defensively sets up our code base be able to accept any future roles that may be added. 
+
+In conclusion, using enums can be a really useful way for defining roles within an application. It definitely worked for me in this application. By explicitly setting our values, we can guarantee data integrity, while keeping readability, whilst also having built-in validations. 
 
 
 
