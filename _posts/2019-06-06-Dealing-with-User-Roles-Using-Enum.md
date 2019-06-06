@@ -108,7 +108,7 @@ attendance = Attendance.create(user_id: user.id, group_id: group.id, role: "Mana
 => ArgumentError: 'Manager' is not a valid role
 ```
 
-The biggest disadvantage to using enum is that the integer values are not explicity set. If in the future a new role was to be added, and for whatever reason it was added inbetween to previously set values, such as Manager inbetween Presenter and Organizer, then the enum integer values would remap and the values within the database will no longer be correct. All prior Organizers will now be Managers. We can definitely avoid this however by explicitly setting the values, for example
+The biggest disadvantage to using enum is that the integer values are not explicity set. If in the future a new role was to be added, and for whatever reason it was added inbetween two previously set values, such as Manager inbetween Presenter and Organizer, then the enum integer values would remap and the values within the database will no longer be correct. All prior Organizers will now be Managers. We can definitely avoid this however by explicitly setting the values, for example
 
 ```ruby
 enum role: {
