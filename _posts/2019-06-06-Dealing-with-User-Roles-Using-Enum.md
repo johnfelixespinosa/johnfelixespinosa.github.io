@@ -5,7 +5,7 @@ date:  2019-06-06 15:13:35
 categories: code
 ---
 
-One of the most common features to be implemented in a web application is the ability to specify roles. Much like the last time I implemented a roles feature [(here)](https://github.com/johnfelixespinosa/React-Practice/tree/master/instagram-mock), it took me longer than it should have. Going in one direction, only to switch gears to another, ultimately coming full circle back in the original direction. To review the concept, I'd like to identify the pros and cons of the implementation method I chose.
+One of the most common features to be implemented in a web application is the ability to specify roles. Much like the last time I implemented a roles feature [(here)](http://johnfelixespinosa.github.io/2018-07-04-Sinatra-Portfolio-Project-Overview-IOCC-Online/), it took me longer than it should have. Going in one direction, only to switch gears to another, ultimately coming full circle back in the original direction. To review the concept, I'd like to identify the pros and cons of the implementation method I chose.
 
 The task at hand for this implementation was as follows 
 
