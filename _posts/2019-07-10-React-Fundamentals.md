@@ -10,12 +10,12 @@ categories: code
 
 ### Arrow Functions
 
-Prior to the introduction of Arrow functions in ES6, we had the following, commonly referred to as an anonymous function. 
+Prior to the introduction of Arrow functions in ES6, we had the following, commonly referred to as an anonymous function, or in this case a named function.
 
 ```javascript
 ------------ES5------------
 function something() {
-  return "I am anonymous"
+  return "I am named"
 }
 ```
 
@@ -24,7 +24,7 @@ The introduction of the arrow function in ES6 allows the same function to be wri
 ```javascript
 ------------ES6------------
 const something = () => {
-  "Arrow Function"
+  "Named arrow function"
 }
 ```
 
