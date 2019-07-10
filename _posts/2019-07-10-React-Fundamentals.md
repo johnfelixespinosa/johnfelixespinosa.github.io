@@ -56,7 +56,7 @@ var obj = {
 };
 ```
 
-The arrow function cannot be bound to a this keyword itself, so it will go up a scope and use the context of this in which it was defined. In this example 'this.id' can be interpreted in pseudocode as "this id, in the context of the scope from which this function was called, which is the variable obj, therefore this.id is obj's id which is 42". Whew! What a mouthful. 
+The arrow function cannot be bound to a this keyword itself, so it will go up a scope and use the context of this in which it was defined. In this example 'this.id' can be interpreted in pseudocode as "this id, in the context of the scope from which this function was called, which is the variable obj, therefore this.id is obj's id which is 42". Hopefully, that makes sense.  
 
 ### setState
 
