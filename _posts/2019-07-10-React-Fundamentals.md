@@ -64,12 +64,12 @@ setState() is the method provided by the React library that allows for defining 
 As a rule of thumb, mutating state directly is never recommended. Using setState() is the only reliable way to update a components state after initialization. 
 
 ```javascript
-------------WRONG------------
+------------Right------------
 setState({ username: event.target.value })
 ```
 
 ```javascript
-------------RIGHT------------
+------------Wrong------------
 this.state.username = { event.target.value }
 ```
 
