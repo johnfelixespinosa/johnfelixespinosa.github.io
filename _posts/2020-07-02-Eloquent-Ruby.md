@@ -103,4 +103,17 @@ me = "player"
 active_player = "player"
 ```
 
+## Objects
+### 1. Most everything is an object
+
+While this concept was not new to me, I found the example to prove this in the book straightforward to drive this concept home.
+
+```ruby
+true.class      # Returns TrueClass
+nil.class       # Returns NilClass
+nil.nil?        # True!!
+```
+In Ruby, if you can reference it with a variable, it's an object.
+
+
 #### _-John Espinosa_
