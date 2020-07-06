@@ -115,5 +115,60 @@ nil.nil?        # True!!
 ```
 In Ruby, if you can reference it with a variable, it's an object.
 
+## Composing Methods
+### 1. Short, coherent methods
+
+This section was interesting to me as it's a practice I'm still actively trying to get better at, and I was reminded of some recent code I wrote, that Rubocop was angry at for being too complex. After sending it off to review, I was left with some code that used defining short methods to lower the complexity, a fundamental and core practice within the Ruby community. The cost of defining a new method is relatively low in Ruby, just an extra def and end. It leads to more elegant code and has the added benefit of making classes easier to test with many fine-grained methods.
+
+Too complex for rubocop
+```ruby
+def show_status
+  if ending_date.present? && ending_date <= Date.current
+    "disabled"
+  elsif starting_date.nil? || ( starting_date.present? && starting_date.future? )
+    "upcoming"
+  else
+    "enabled"
+  end
+end
+```
+
+Refactored by composing short methods
+```ruby
+def show_status
+  if display_disabled?
+    "disabled"
+  elsif display_upcoming?
+    "upcoming"
+  else
+    "enabled"
+  end
+end
+
+def display_disabled?
+  ending_date.present? && ending_date <= Date.current
+end
+
+def display_upcoming?
+  starting_date.nil? || ( starting_date.present? && starting_date.future? )
+end
+```
+
+It cost me nothing to define methods for the operator expressions, and as a benefit, we've made Rubocop happy, we've made the show_status method much more elegant at first glance to understand, we've defined two methods that clearly state their purpose, as well as have defined methods that can now be tested independently.
+
+### 2. Class Method: Singletons in Plain sight
+A singleton is a method defined on an instance of a class. Knowing this, and understanding prior that most things in Ruby are objects that are instances of a Class object. Then it makes sense that Class methods are just singletons.
+
+```ruby
+class Document
+  class << self
+    def find_by_name(name)
+      # Method here
+    end
+  end
+end
+```
+
+
 
 #### _-John Espinosa_
