@@ -4,6 +4,7 @@ title: "Eloquent Ruby"
 date:  2020-07-02 15:30:35
 categories: code
 ---
+Concepts and tidbits from Eloquent Ruby by Russ Olsen that reinforced, taught me something new, or I just found interesting!
 
 ## Write Code That Looks Like Ruby
 
@@ -67,5 +68,39 @@ This is even better
 @name = new_name unless @read_only
 ```
 
+### 3. Percent Strings
+
+Another practice I was unfamiliar with was the use of the percent shortcut to turn inelegant code into more readable code. It wasn't until I started looking into codebases that I had not written did I see this practice in the wild.
+
+An array I may have likely written
+
+```ruby
+characters = [ 'mario', 'luigi', 'toad', 'bowser', 'yoshi' ]
+```
+This is much cleaner, easier to read, and convenient
+```ruby
+characters = %w{ mario luigi toad bowser yoshi }
+```
+
+## Symbols
+### 1. Symbols stand for something
+
+There can only ever be one instance of any given symbol.
+```ruby
+me = :player
+active_player = me
+first_player = :player
+```
+me, active_player, and first_player all refer to the same object
+```ruby
+# True!
+me == first_player
+a.eql?(c)
+```
+In contrast, if you were to use a string over a symbol, you are making a brand new string object each time.
+```ruby
+me = "player"
+active_player = "player"
+```
 
 #### _-John Espinosa_
