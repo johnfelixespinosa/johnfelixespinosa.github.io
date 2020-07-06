@@ -5,9 +5,9 @@ date:  2020-07-02 15:30:35
 categories: code
 ---
 
-### Write Code That Looks Like Ruby
+## Write Code That Looks Like Ruby
 
-## 1. Parenthesis
+### 1. Parenthesis
 Ruby at times tries to minimalize syntax. An example of this, that I was unfamiliar with is in how Rubyists treat parenthesis. The first time I encountered this within a codebase, I was actually confused, as I had not yet begun the practice of omitting parens, and used them at all times.
 
 ```ruby
@@ -43,7 +43,7 @@ if text.size > 100
 end
 ```
 
-## 2. Modifiers
+### 2. Modifiers
 
 Prior to starting my web development career, the bulk of the logic that I would write consisted of verbose, if/else statements. While getting the job done, one of the core fundamentals of writing Ruby is to be concise and write idiomatic code that can be read and understood simply. For example, refactoring the method below, from something I may have written two years ago, to a concise method that I may end up with today.
 
