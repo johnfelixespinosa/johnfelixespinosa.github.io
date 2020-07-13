@@ -169,6 +169,21 @@ class Document
 end
 ```
 
+### 3. Send
+
+```ruby
+class A
+  private
+
+  def a_method
+    puts "confusing"
+  end
+end
+
+A.new.send(:a_method)
+>> confusing
+```
+
 ## Blocks
 ### 1. Block Arguments
 
@@ -219,5 +234,19 @@ end
 ```
 
 This results in three methods on a Document instance that will all return the number of words in the document
+
+## Testing
+### 1. Mock
+
+A mock, unlike a stub, knows which methods should be called and with what arguments
+
+```ruby
+it "should know how to print itself" do
+  mock_printer = mock('Printer')
+  mock_printer.should_receive(:availabe?).and_return(true)
+  mock_printer.should_receive(:render).exactly(2).times
+  doc.print(mock_printer).should == "Done"
+end
+```
 
 #### _-John Espinosa_
