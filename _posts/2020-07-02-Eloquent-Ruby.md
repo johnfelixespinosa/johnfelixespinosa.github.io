@@ -169,6 +169,55 @@ class Document
 end
 ```
 
+## Blocks
+### 1. Block Arguments
 
+Blocks can take arguments, which are supplied as arguments to yield
+
+```ruby
+def do_something_with_an_arg
+  yield("Hello World") if block_given?
+end
+
+do_something_with_an_arg do |message|
+  puts "This message is #{message}"
+end
+
+// The message is Hello World
+```
+
+## Error Handling
+### 1. method_missing
+
+You are free to override method_missing in any class and handle the case of missing method yourself
+
+```ruby
+class RepeatBackToMe
+  def method_missing( method_name, *args )
+    puts "Hey, you just called the #{method_name} method"
+    puts "With these arguments: #{args.join(' ')}"
+    puts "But there ain't no such method!"
+  end
+end
+```
+
+## Monkey Patching
+### 1. Alias
+
+alias_method actually copies a method implementation, giving it a new name. It's not that we are redefining the original method, but making a copy of it and naming it something else.
+
+```ruby
+class Document
+
+  def word_count
+    words.size
+  end
+
+  alias_method :number_of_words, :word_count
+  alias_method :size_in_words, :word_count
+end
+```
+
+This results in three methods on a Document instance that will all return the number of words in the document
 
 #### _-John Espinosa_
